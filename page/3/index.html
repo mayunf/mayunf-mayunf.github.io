@@ -254,6 +254,250 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.mayunfeng.com/2018/12/03/git-delete-remote-branch/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="马运锋">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="马运锋的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/03/git-delete-remote-branch/" itemprop="url">git-delete-remote-branch</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-03T17:25:55+08:00">
+                2018-12-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="删除远程branch"><a href="#删除远程branch" class="headerlink" title="删除远程branch"></a>删除远程<code>branch</code></h2><h3 id="查看全部分支"><a href="#查看全部分支" class="headerlink" title="查看全部分支"></a>查看全部分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git branch -a</span><br><span class="line"></span><br><span class="line">* dev</span><br><span class="line">  master</span><br><span class="line">  remotes/online/dev</span><br><span class="line">  remotes/online/master</span><br><span class="line">  remotes/origin/dev</span><br><span class="line">  remotes/origin/master</span><br><span class="line">  remotes/origin/dev-test</span><br></pre></td></tr></table></figure>
+<h3 id="删除远程分支"><a href="#删除远程分支" class="headerlink" title="删除远程分支"></a>删除远程分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin --delete dev-test</span><br></pre></td></tr></table></figure>
+<h2 id="删除本地分支"><a href="#删除本地分支" class="headerlink" title="删除本地分支"></a>删除本地分支</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d dev</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.mayunfeng.com/2018/12/03/git-delete-remote-tags/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="马运锋">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="马运锋的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/03/git-delete-remote-tags/" itemprop="url">git-delete-remote-tags</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-03T17:25:55+08:00">
+                2018-12-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="git-删除远程仓库的标签"><a href="#git-删除远程仓库的标签" class="headerlink" title="git 删除远程仓库的标签"></a>git 删除远程仓库的标签</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin :refs/tags/&lt;tagname&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="git-删除本地仓库的标签"><a href="#git-删除本地仓库的标签" class="headerlink" title="git 删除本地仓库的标签"></a>git 删除本地仓库的标签</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag -d &lt;tagname&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="本地tag推送到远程仓库"><a href="#本地tag推送到远程仓库" class="headerlink" title="本地tag推送到远程仓库"></a>本地tag推送到远程仓库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push --tag</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://blog.mayunfeng.com/2018/12/03/laravel-1071/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1312,266 +1556,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.mayunfeng.com/2018/11/13/change-git-remote/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="马运锋">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="马运锋的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/13/change-git-remote/" itemprop="url">change-git-remote</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-13T09:12:28+08:00">
-                2018-11-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>更换git远程仓库地址(以下命令建议在git bash 下执行)：</p>
-<p><strong>注意：下列命令中的<code>mina.api.jwsem.cn</code> 需要替换为自己的仓库地址名称</strong></p>
-<h2 id="首先执行-git-remote-v-查看当前仓库地址，结果如下"><a href="#首先执行-git-remote-v-查看当前仓库地址，结果如下" class="headerlink" title="首先执行 git remote -v 查看当前仓库地址，结果如下"></a>首先执行 <code>git remote -v</code> 查看当前仓库地址，结果如下</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">D:\phpStudy\PHPTutorial\WWW\mina.api.jwsem.cn&gt;git remote -v</span><br><span class="line"></span><br><span class="line">origin  ssh://webapps@10.110.30.49/~/git/mina.api.jwsem.cn (fetch)</span><br><span class="line">origin  ssh://webapps@10.110.30.49/~/git/mina.api.jwsem.cn (push)</span><br></pre></td></tr></table></figure>
-<h2 id="复制-ssh-webapps-10-110-30-49-git-mina-api-jwsem-cn-将地址改为-ssh-webapps-10-110-30-73-git-mina-api-jwsem-cn"><a href="#复制-ssh-webapps-10-110-30-49-git-mina-api-jwsem-cn-将地址改为-ssh-webapps-10-110-30-73-git-mina-api-jwsem-cn" class="headerlink" title="复制 ssh://webapps@10.110.30.49/~/git/mina.api.jwsem.cn 将地址改为 ssh://webapps@10.110.30.73/~/git/mina.api.jwsem.cn"></a>复制 <code>ssh://webapps@10.110.30.49/~/git/mina.api.jwsem.cn</code> 将地址改为 <code>ssh://webapps@10.110.30.73/~/git/mina.api.jwsem.cn</code></h2><p>即：地址中的49改为73,<code>mina.api.jwsem.cn</code> 需要替换为自己的仓库地址名称执行以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote <span class="built_in">set</span>-url origin ssh://webapps@10.110.30.73/~/git/mina.api.jwsem.cn</span><br></pre></td></tr></table></figure>
-<p>如果没有报错信息即修改成功了。</p>
-<h2 id="再次执行-git-remote-v-查看当前仓库地址，结果如下"><a href="#再次执行-git-remote-v-查看当前仓库地址，结果如下" class="headerlink" title="再次执行 git remote -v 查看当前仓库地址，结果如下"></a>再次执行 <code>git remote -v</code> 查看当前仓库地址，结果如下</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">D:\phpStudy\PHPTutorial\WWW\mina.api.jwsem.cn&gt;git remote -v</span><br><span class="line"></span><br><span class="line">origin  ssh://webapps@10.110.30.73/~/git/mina.api.jwsem.cn (fetch)</span><br><span class="line">origin  ssh://webapps@10.110.30.73/~/git/mina.api.jwsem.cn (push)</span><br></pre></td></tr></table></figure>
-<h2 id="此时执行-git-pull-第一次会出现以下错误"><a href="#此时执行-git-pull-第一次会出现以下错误" class="headerlink" title="此时执行 git pull 第一次会出现以下错误"></a>此时执行 <code>git pull</code> 第一次会出现以下错误</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span><br><span class="line">@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @</span><br><span class="line">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span><br><span class="line">IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!</span><br><span class="line">Someone could be eavesdropping on you right now (man-in-the-middle attack)!</span><br><span class="line">It is also possible that a host key has just been changed.</span><br><span class="line">The fingerprint <span class="keyword">for</span> the RSA key sent by the remote host is</span><br><span class="line">SHA256:buhkV/c/OVY1lOGF+pKRo/hpDhw7YZ+Yj9o+Qx8bib4.</span><br><span class="line">Please contact your system administrator.</span><br><span class="line">Add correct host key <span class="keyword">in</span> /c/Users/mayunfeng/.ssh/known_hosts to get rid of this message.</span><br><span class="line">Offending RSA key <span class="keyword">in</span> /c/Users/mayunfeng/.ssh/known_hosts:3</span><br><span class="line">RSA host key <span class="keyword">for</span> 10.110.30.73 has changed and you have requested strict checking.</span><br><span class="line">Host key verification failed.</span><br><span class="line">fatal: Could not <span class="built_in">read</span> from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br></pre></td></tr></table></figure>
-<p>解决方法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -R 10.110.30.73</span><br></pre></td></tr></table></figure></p>
-<p>得到以下结果：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -R 10.110.30.73</span><br><span class="line"><span class="comment"># Host 10.110.30.73 found: line 3</span></span><br><span class="line">/c/Users/mayunfeng/.ssh/known_hosts updated.</span><br><span class="line">Original contents retained as /c/Users/mayunfeng/.ssh/known_hosts.old</span><br></pre></td></tr></table></figure>
-<p>再次执行 <code>git pull</code> 问题得到解决！</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.mayunfeng.com/2018/11/12/host-key-for-ip-address-has-changed-and-you-have-requested-strict-checking/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="马运锋">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="马运锋的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/12/host-key-for-ip-address-has-changed-and-you-have-requested-strict-checking/" itemprop="url">错误：RSA host key for 10.110.30.73 has changed and you have requested strict checking.（已解决）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-12T19:14:24+08:00">
-                2018-11-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>今天在执行<code>git pull</code>后,报错：</p>
-<blockquote>
-<p>先执行了 <code>git remote set-url origin ssh://git@ip:22/~/git/www.baidu.com/</code></p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span><br><span class="line">@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @</span><br><span class="line">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span><br><span class="line">IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!</span><br><span class="line">Someone could be eavesdropping on you right now (man-in-the-middle attack)!</span><br><span class="line">It is also possible that a host key has just been changed.</span><br><span class="line">The fingerprint <span class="keyword">for</span> the RSA key sent by the remote host is</span><br><span class="line">SHA256:buhkV/c/OVY1lOGF+pKRo/hpDhw7YZ+Yj9o+Qx8bib4.</span><br><span class="line">Please contact your system administrator.</span><br><span class="line">Add correct host key <span class="keyword">in</span> /c/Users/mayunfeng/.ssh/known_hosts to get rid of this message.</span><br><span class="line">Offending RSA key <span class="keyword">in</span> /c/Users/mayunfeng/.ssh/known_hosts:3</span><br><span class="line">RSA host key <span class="keyword">for</span> 10.110.30.73 has changed and you have requested strict checking.</span><br><span class="line">Host key verification failed.</span><br><span class="line">fatal: Could not <span class="built_in">read</span> from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br></pre></td></tr></table></figure>
-<p>因为重装后，本地机和服务器内部ssh对不上导致错误，因此，只需要删除本地机ssh缓存信息，即可恢复<br>在本地机输入一下命令行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -R [服务器ip address]</span><br></pre></td></tr></table></figure>
-<p>得到以下结果：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -R 10.110.30.73</span><br><span class="line"><span class="comment"># Host 10.110.30.73 found: line 3</span></span><br><span class="line">/c/Users/mayunfeng/.ssh/known_hosts updated.</span><br><span class="line">Original contents retained as /c/Users/mayunfeng/.ssh/known_hosts.old</span><br></pre></td></tr></table></figure>
-<p>再次执行 <code>git pull</code> 问题得到解决！</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1624,7 +1608,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1637,7 +1621,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>

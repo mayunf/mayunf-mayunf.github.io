@@ -254,6 +254,282 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.mayunfeng.com/2019/02/19/curl-could-not-resolve-host/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="马运锋">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="马运锋的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/19/curl-could-not-resolve-host/" itemprop="url">curl(6) Name or service not known</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-19T10:39:35+08:00">
+                2019-02-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><ol>
+<li><p>编辑<code>/etc/resolv.conf</code> 使用 google 的dns</p>
+</li>
+<li><p>重启服务器</p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.mayunfeng.com/2019/01/31/git-crential-lock-file-exists/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="马运锋">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="马运锋的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/31/git-crential-lock-file-exists/" itemprop="url">Git提交时提示"fatal unable to get credential storage lock File exists"的解决办法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-31T14:17:30+08:00">
+                2019-01-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>今天在提交git项目时遇到提示：fatal: unable to get credential storage lock: File exists。<br>但是似乎提交依然成功了,不知道这个报错有什么影响。</p>
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>git的config中<code>credential.helper</code>项有重复，我的是同时含有<code>credential.helper=store</code>和<code>credential.helper=manager</code></p>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>在git的config中找到credential.helper项，删除其中一项。</p>
+<ol>
+<li>首先要确定是否是有config中credential.helper重复引起的问题，执行git config -l可查看所有参数</li>
+<li><p>确定参数配置的位置。分别执行</p>
+<p> <code>git config --local -l</code></p>
+<p> <code>git config --global -l</code></p>
+<p> <code>git config --system -l</code></p>
+<p> 可查看当前项目、全局、系统的参数，找到<code>credential.helper=manager</code>的那一项</p>
+</li>
+<li><p><code>git config --system --unset credential.helper</code> 即可删除<code>system</code>中的此参数配置</p>
+</li>
+<li>如果依然有问题，可尝试升级Git版本到2.9.0以上并再次修改config。</li>
+</ol>
+<h2 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h2><p>除了使用指令修改config外也可直接找到配置文件修改。</p>
+<ol>
+<li>在win中，git的config配置文件路径分别为：<ul>
+<li>local：在当前项目的.git/config文件中，默认.git是隐藏文件</li>
+<li>global：在%HOME%/.gitconfig中，%HOME%为系统自带环境变量，一般为C:\Users\<username>,相当与linux的~。另外.gitconfig文件可能也是隐藏的</username></li>
+<li>system：在git安装目录的mingw64\etc\gitconfig文件中</li>
+</ul>
+</li>
+<li>在linux中，git的config配置文件路径分别为<ul>
+<li>local：也是在当前项目的.git/config文件中</li>
+<li>global：在/.gitconfig中，为当前用户的主目录</li>
+<li>system：在根目录/etc/gitconfig文件中</li>
+</ul>
+</li>
+</ol>
+<h2 id="保存-GIT-用户名密码"><a href="#保存-GIT-用户名密码" class="headerlink" title="保存 GIT 用户名密码"></a>保存 GIT 用户名密码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global credential.helper store</span><br></pre></td></tr></table></figure>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://www.jianshu.com/p/8a015684f3e1" target="_blank" rel="noopener">https://www.jianshu.com/p/8a015684f3e1</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://blog.mayunfeng.com/2019/01/31/linux-ssh-slow/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1374,250 +1650,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.mayunfeng.com/2018/12/03/git-delete-remote-branch/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="马运锋">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="马运锋的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/03/git-delete-remote-branch/" itemprop="url">git-delete-remote-branch</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-03T17:25:55+08:00">
-                2018-12-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="删除远程branch"><a href="#删除远程branch" class="headerlink" title="删除远程branch"></a>删除远程<code>branch</code></h2><h3 id="查看全部分支"><a href="#查看全部分支" class="headerlink" title="查看全部分支"></a>查看全部分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git branch -a</span><br><span class="line"></span><br><span class="line">* dev</span><br><span class="line">  master</span><br><span class="line">  remotes/online/dev</span><br><span class="line">  remotes/online/master</span><br><span class="line">  remotes/origin/dev</span><br><span class="line">  remotes/origin/master</span><br><span class="line">  remotes/origin/dev-test</span><br></pre></td></tr></table></figure>
-<h3 id="删除远程分支"><a href="#删除远程分支" class="headerlink" title="删除远程分支"></a>删除远程分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin --delete dev-test</span><br></pre></td></tr></table></figure>
-<h2 id="删除本地分支"><a href="#删除本地分支" class="headerlink" title="删除本地分支"></a>删除本地分支</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d dev</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.mayunfeng.com/2018/12/03/git-delete-remote-tags/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="马运锋">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="马运锋的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/03/git-delete-remote-tags/" itemprop="url">git-delete-remote-tags</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-03T17:25:55+08:00">
-                2018-12-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="git-删除远程仓库的标签"><a href="#git-删除远程仓库的标签" class="headerlink" title="git 删除远程仓库的标签"></a>git 删除远程仓库的标签</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin :refs/tags/&lt;tagname&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="git-删除本地仓库的标签"><a href="#git-删除本地仓库的标签" class="headerlink" title="git 删除本地仓库的标签"></a>git 删除本地仓库的标签</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag -d &lt;tagname&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="本地tag推送到远程仓库"><a href="#本地tag推送到远程仓库" class="headerlink" title="本地tag推送到远程仓库"></a>本地tag推送到远程仓库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push --tag</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1670,7 +1702,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1683,7 +1715,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
